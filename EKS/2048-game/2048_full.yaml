@@ -1,0 +1,94 @@
+**This YAML file collectively deploys the 2048 game application, exposes it via a NodePort service, and then makes it accessible via an ALB-based Ingress with specific routing rules.
+YAML file describes Kubernetes resources for deploying and exposing the 2048 game application using a Deployment, Service, and Ingress**
+
+
+---
+#This section defines a Kubernetes Namespace named "game-2048," which is used to
+#logically isolate the resources related to the 2048 game application.
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: game-2048
+---
+#Deployment named "deployment-2048" is defined within the "game-2048" Namespace.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: game-2048
+  name: deployment-2048
+#The spec section of the Deployment specifies the desired state of the pods. In this case:
+
+#selector defines the labels used to identify the pods controlled by this Deployment.
+#replicas specifies the desired number of replicas (5 in this case).
+#template defines the pod template for the replicas.
+#metadata.labels labels the pods with "app.kubernetes.io/name: app-2048".
+#spec.containers describes the container within the pod:
+#image specifies the container image.
+#imagePullPolicy defines the policy for pulling the image.
+#ports maps a container port to the pod.
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: app-2048
+  replicas: 5
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: app-2048
+    spec:
+      containers:
+        - image: public.ecr.aws/l6m2t8p7/docker-2048:latest
+          imagePullPolicy: Always
+          name: app-2048
+          ports:
+            - containerPort: 80
+---
+#This section defines a Kubernetes Service named "service-2048" within
+#the "game-2048" Namespace. Services expose pods to the network.
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: game-2048
+  name: service-2048
+#The spec section of the Service describes the service's behavior:
+#ports specifies the port configuration.
+#type defines the type of service (NodePort exposes the service on a high-numbered port on each node).
+#selector defines the labels used to select the pods that the service targets.
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+  type: NodePort
+  selector:
+    app.kubernetes.io/name: app-2048
+---
+#Ingress resource named "ingress-2048" is defined to expose the application to the internet using an AWS Application Load Balancer (ALB).
+#annotations provide metadata for the ALB Ingress Controller.
+#spec describes the Ingress behavior:
+#ingressClassName specifies the Ingress controller.
+#rules define routing rules for HTTP paths:
+#http specifies an HTTP rule.
+#paths specify the path mapping.
+#path specifies the path that should be directed to the backend.
+#backend defines the backend service to route traffic to.
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  namespace: game-2048
+  name: ingress-2048
+  annotations:
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+spec:
+  ingressClassName: alb
+  rules:
+    - http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: service-2048
+                port:
+                  number: 80
