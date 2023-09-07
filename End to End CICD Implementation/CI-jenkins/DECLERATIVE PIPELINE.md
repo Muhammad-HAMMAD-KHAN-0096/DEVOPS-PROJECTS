@@ -45,4 +45,4 @@ we can access the `SonarQube Server` on `http://<ip-address>:9000`
 
 _Similarly docker creds will be stored in jenkins for pushing image to the docker hub_
 
-Setting uo argocd _see argo cd_ folder in the repo
+Setting uo argocd _see argo-cd setup_ folder in the repo
