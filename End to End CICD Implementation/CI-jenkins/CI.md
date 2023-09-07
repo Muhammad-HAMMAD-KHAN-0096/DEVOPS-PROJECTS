@@ -45,4 +45,20 @@ we can access the `SonarQube Server` on `http://<ip-address>:9000`
 
 _Similarly docker and github [use git hub classic token] creds will be stored in jenkins for pushing image to the docker hub_
 
+### The final resul from jenkins.
+
+<img width="1271" alt="ci-jenkins" src="https://github.com/Muhammad-HAMMAD-KHAN-0096/DEVOPS-PROJECTS/assets/141496839/6dea0001-c20d-43cf-a800-2058ed70a2cb">
+
+- Sonar will push report to the provided i.p as shown in the picture below from jenkins logs
+  
+<img width="1000" alt="mvn sonar sonar" src="https://github.com/Muhammad-HAMMAD-KHAN-0096/DEVOPS-PROJECTS/assets/141496839/0a5cee19-cb6c-4364-9461-1d0f858c8094">
+
+### SONAR REPORT
+
+<img width="794" alt="sonar-report" src="https://github.com/Muhammad-HAMMAD-KHAN-0096/DEVOPS-PROJECTS/assets/141496839/a9281f22-5466-4367-abe2-f3c422b9a829">
+
+- After this the image will be pushed in docker hub as shown in picture below.
+
+ <img width="822" alt="docker-hub" src="https://github.com/Muhammad-HAMMAD-KHAN-0096/DEVOPS-PROJECTS/assets/141496839/7e10ee20-2c7d-46e1-a631-def61a6a3984">
+ 
 Setting uo argocd _see argo-cd setup_ folder in the repo
