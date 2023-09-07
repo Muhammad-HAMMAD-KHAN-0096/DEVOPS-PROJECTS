@@ -43,4 +43,6 @@ we can access the `SonarQube Server` on `http://<ip-address>:9000`
 
 <img width="1226" alt="sonar0jenkins credsadded" src="https://github.com/Muhammad-HAMMAD-KHAN-0096/DEVOPS-PROJECTS/assets/141496839/67e7988a-7c58-45ae-8c96-394caf2cb168">
 
+_Similarly docker creds will be stored in jenkins for pushing image to the docker hub_
+
 Setting uo argocd _see argo cd_ folder in the repo
