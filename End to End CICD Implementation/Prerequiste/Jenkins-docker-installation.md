@@ -52,7 +52,7 @@ sudo apt-get install jenkins
 
 ### Login to Jenkins using the below URL:
 
-http://<ec2-instance-public-ip-address>:8080    [You can get the ec2-instance-public-ip-address from your AWS EC2 console page]
+http://<ec2-instance-public-ip-address>:8080    [ec2-instance-public-ip-address--->AWS EC2 console page]
 
 Note: If you are not interested in allowing `All Traffic` to your EC2 instance
       1. Delete the inbound traffic rule for your instance
@@ -72,11 +72,11 @@ Wait for the Jenkins to Install suggested plugins
 
 <img width="1291" alt="Screenshot 2023-02-01 at 10 59 31 AM" src="https://user-images.githubusercontent.com/43399466/215959398-344b5721-28ec-47a5-8908-b698e435608d.png">
 
-Create First Admin User or Skip the step [If you want to use this Jenkins instance for future use-cases as well, better to create admin user]
+Create First Admin User or Skip the step [If permonent use of this server is required Creating Strong password is recomended]
 
 <img width="990" alt="Screenshot 2023-02-01 at 11 02 09 AM" src="https://user-images.githubusercontent.com/43399466/215959757-403246c8-e739-4103-9265-6bdab418013e.png">
 
-Jenkins Installation is Successful. You can now starting using the Jenkins 
+Jenkins Installation is Successful. 
 
 <img width="990" alt="Screenshot 2023-02-01 at 11 14 13 AM" src="https://user-images.githubusercontent.com/43399466/215961440-3f13f82b-61a2-4117-88bc-0da265a67fa7.png">
 
@@ -90,7 +90,7 @@ Jenkins Installation is Successful. You can now starting using the Jenkins
    
 <img width="1392" alt="Screenshot 2023-02-01 at 12 17 02 PM" src="https://user-images.githubusercontent.com/43399466/215973898-7c366525-15db-4876-bd71-49522ecb267d.png">
 
-Wait for the Jenkins to be restarted.
+Restart the Jenkins.
 
 
 ## Docker Slave Configuration
@@ -111,10 +111,10 @@ usermod -aG docker ubuntu
 systemctl restart docker
 ```
 
-Once you are done with the above steps, it is better to restart Jenkins.
+Restart Jenkins.
 
 ```
-http://<ec2-instance-public-ip>:8080/restart
+http://[instance-public-ip]:8080/restart
 ```
 
 The docker agent configuration is now successful.
