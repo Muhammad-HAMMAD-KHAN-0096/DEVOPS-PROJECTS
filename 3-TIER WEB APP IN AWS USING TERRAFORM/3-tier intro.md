@@ -1,6 +1,8 @@
-# Three Tier Architecture
+# <ins>Three Tier Architecture</ins>
 
 Three-tier architecture, also known as multi-tier architecture, is a well-established framework in the field of software engineering and DevOps. This architectural paradigm is designed to enhance the scalability, maintainability, and efficiency of applications, making it a cornerstone in the development and deployment of modern software systems. In this discussion, we will delve into the key components, principles, and benefits of three-tier architecture.
+
+
 ## Tier 1: Presentation Layer
 The first tier of the three-tier architecture, known as the presentation layer, is the front-end component that directly interacts with end-users. It is responsible for rendering the user interface and presenting information in a user-friendly manner. This layer may include web browsers, mobile applications, or any user interface elements that facilitate user interactions. DevOps engineers focus on optimizing the presentation layer to ensure responsiveness, accessibility, and a seamless user experience.
 
