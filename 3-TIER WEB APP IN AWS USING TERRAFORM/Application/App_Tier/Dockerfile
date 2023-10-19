@@ -1,6 +1,6 @@
 FROM --platform=linux/amd64 node:17-alpine
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
+RUN mkdir -p /usr/SRC/App_Tier
+WORKDIR /usr/SRC/App_Tier
 
 # Install app dependencies
 COPY package.json /usr/SRC/App_Tier
