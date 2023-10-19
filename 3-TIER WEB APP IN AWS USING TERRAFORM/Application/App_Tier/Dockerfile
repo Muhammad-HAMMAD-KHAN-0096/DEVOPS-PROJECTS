@@ -8,7 +8,7 @@ COPY package.json /usr/SRC/App_Tier
 RUN npm install
 
 # Bundle app source
-COPY . /usr/src/app
+COPY . /usr/SRC/App_Tier
 
 # Expose publc port and run npm command
 EXPOSE 3000
