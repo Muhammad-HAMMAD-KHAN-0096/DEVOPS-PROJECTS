@@ -1,3 +1,5 @@
+# <ins>Project Flow</ins>
+First of all we have AWS Cloud, inside this we have VPC in which we will deploy our resources.Here we have two availability zones.We have 2 public and two private subnets.two LBs will be deployed using IAC.One lB for UI and one LB for backend.
 # <ins>VPC</ins>
 <img width="1001" alt="vpc" src="https://github.com/Muhammad-HAMMAD-KHAN-0096/DEVOPS-PROJECTS/assets/141496839/18108f49-d612-45f9-b970-0bd0906f68da">
 
