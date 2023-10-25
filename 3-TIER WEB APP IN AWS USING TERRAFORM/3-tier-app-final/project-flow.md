@@ -47,7 +47,7 @@ Two ECR repos will be created where we will have docker image for application an
 <img width="1016" alt="igw" src="https://github.com/Muhammad-HAMMAD-KHAN-0096/DEVOPS-PROJECTS/assets/141496839/dc29e71c-927e-4556-acf0-a47277e01d77">
 
 
-when i hit /init the UI will hit the backend LB i.e Application LB. and Application Load balancer is hitting the DB as shown in the code from App Tier .
+## when i hit /init the UI will hit the backend LB i.e Application LB. and Application Load balancer is hitting the DB as shown in the code from App Tier .
 ```
 https://github.com/Muhammad-HAMMAD-KHAN-0096/DEVOPS-PROJECTS/3-TIER WEB APP IN AWS USING TERRAFORM/Application//presentation-tier/src/index.js
 ```
