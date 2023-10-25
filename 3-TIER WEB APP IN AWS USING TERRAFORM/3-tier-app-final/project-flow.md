@@ -2,7 +2,7 @@
 
 #### <ins>Presentation layer will talk  to Presentation layer .Presentation layer will talk to Business/Application logic layer and It will talk to data layer</ins> 
 First of all we have AWS Cloud, inside this we have VPC in which we will deploy our resources.Here we have two availability zones.We have 2 public and two private subnets.two LBs will be deployed using IAC.One lB for UI and one LB for backend, after this we have our DB.
-First of all setup 2 ECR repos(for application and presentation tier) using ecr.sh script.
+#### Setup 2 ECR repos(for application and presentation tier) using ecr.sh script.
 # <ins>ECR REPOS</ins>
 <img width="1024" alt="ecr-repo" src="https://github.com/Muhammad-HAMMAD-KHAN-0096/DEVOPS-PROJECTS/assets/141496839/6f8027c4-0dc0-4ed5-89bb-a73d65799dd5">
 
